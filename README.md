@@ -25,6 +25,16 @@ $ ionic cordova run ios
 Substitute ios for android if not on a Mac.
 
 # ionic 3
+# Installation & Configuration
 
+```bash
+1. Clone the repository: `$ https://github.com/ggolfko/ionic.git`
+2. cd ionic
+3. Install the application: `$ npm install`
+4. Start the server: `$ ionic serve`
+5. View in browser at `$ http://localhost:8100/ionic-lab`
+```
 # RESTful API
-`https://github.com/ggolfko/node-restful.git`
+```bash
+$ https://github.com/ggolfko/node-restful.git
+```
