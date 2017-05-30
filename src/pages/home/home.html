@@ -24,6 +24,10 @@
       </ion-item>
 
       <ion-item-options>
+        <button ion-button color="info" (click)="updateUser(user)">
+            <ion-icon name="edit"></ion-icon>
+            Edit
+          </button>
         <button ion-button color="danger" (click)="deleteUser(user)">
             <ion-icon name="trash"></ion-icon>
             Delete

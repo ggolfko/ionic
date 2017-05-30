@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
-import 'rxjs/add/operator/map';
 
 import { UserDataProvider } from '../../providers/user-data/user-data';
 import { AddUserPage } from '../add-user/add-user';
+import { EditUserPage } from '../edit-user/edit-user';
 
 @Component({
   selector: 'page-home',
@@ -24,7 +24,7 @@ export class HomePage {
     this.userService.loadUser().then(data => {
       this.users = data;
     }, err => {
-
+      //something
     });
 
   }
@@ -37,6 +37,26 @@ export class HomePage {
       if (data) {
         this.users.push(data);
         this.userService.createUser(data);
+      }
+    });
+
+    modal.present();
+
+  }
+
+  updateUser(data) {
+
+    let modal = this.modalCtrl.create(EditUserPage, data);
+
+    modal.onDidDismiss(data => {
+      if (data) {
+        this.userService.putUser(data).then(() => {
+          this.userService.loadUser().then(data => {
+            this.users = data;
+          }, err => {
+            //something
+          });
+        });
       }
     });
 
