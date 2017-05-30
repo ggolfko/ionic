@@ -8,6 +8,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { AddUserPage } from '../pages/add-user/add-user';
+import { EditUserPage } from '../pages/edit-user/edit-user';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,6 +22,7 @@ import { UserDataProvider } from '../providers/user-data/user-data';
     ContactPage,
     HomePage,
     AddUserPage,
+    EditUserPage,
     TabsPage
   ],
   imports: [
@@ -35,6 +37,7 @@ import { UserDataProvider } from '../providers/user-data/user-data';
     ContactPage,
     HomePage,
     AddUserPage,
+    EditUserPage,
     TabsPage
   ],
   providers: [

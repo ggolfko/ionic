@@ -33,7 +33,7 @@ export class UserDataProvider {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
 
-      this.http.get('http://localhost:8080/api/users', options)
+      return this.http.get('http://localhost:8080/api/users', options)
         .map(res => res.json())
         .subscribe(data => {
           // we've got back the raw data, now generate the core schedule data
@@ -56,6 +56,24 @@ export class UserDataProvider {
         console.log(res.json());
       });
 
+  }
+
+  putUser(data) {
+
+    return new Promise(resolve => {
+      let params = JSON.stringify(data);
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+
+      return this.http.put('http://localhost:8080/api/users/' + data._id, params, options)
+        .map(res => console.log(res.json()))
+        .subscribe(data => {
+          // we've got back the raw data, now generate the core schedule data
+          // and save the data for later reference
+          this.data = data;
+          resolve(this.data);
+        });
+    });
   }
 
   // delete the user with this id
