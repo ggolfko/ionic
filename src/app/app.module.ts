@@ -10,10 +10,15 @@ import { HomePage } from '../pages/home/home';
 import { AddUserPage } from '../pages/add-user/add-user';
 import { EditUserPage } from '../pages/edit-user/edit-user';
 import { TabsPage } from '../pages/tabs/tabs';
+import { UsersPage } from '../pages/users/users';
+import { UserDetailsPage } from '../pages/user-details/user-details';
+import { ReposPage } from '../pages/repos/repos';
+import { OrganisationsPage } from '../pages/organisations/organisations';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserDataProvider } from '../providers/user-data/user-data';
+import { GithubUsersProvider } from '../providers/github-users/github-users';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,10 @@ import { UserDataProvider } from '../providers/user-data/user-data';
     HomePage,
     AddUserPage,
     EditUserPage,
+    UsersPage,
+    UserDetailsPage,
+    ReposPage,
+    OrganisationsPage,
     TabsPage
   ],
   imports: [
@@ -38,13 +47,18 @@ import { UserDataProvider } from '../providers/user-data/user-data';
     HomePage,
     AddUserPage,
     EditUserPage,
+    UsersPage,
+    UserDetailsPage,
+    ReposPage,
+    OrganisationsPage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    UserDataProvider
+    UserDataProvider,
+    GithubUsersProvider
   ]
 })
 export class AppModule { }
